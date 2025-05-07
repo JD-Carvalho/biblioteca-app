@@ -117,7 +117,7 @@ class ClienteController extends Controller
     {
         $user = Auth::user();
 
-        $cliente = $request->post('nome');
+        $nome = $request->post('nome');
         $cpf = $request->post('cpf');
         $cep = $request->post('cep');
         $logradouro = $request->post('logradouro');
@@ -131,7 +131,7 @@ class ClienteController extends Controller
 
         $cliente = Cliente::find($id);
 
-        $cliente->nome = $cliente;
+        $cliente->nome = $nome;
         $cliente->cpf = $cpf;
         $cliente->cep = $cep;
         $cliente->logradouro = $logradouro;
