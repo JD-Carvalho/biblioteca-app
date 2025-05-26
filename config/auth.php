@@ -40,9 +40,24 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'api' => [
+            'driver' => 'sanctum',
+            'provider' => 'users',
+        ],    
     ],
 
-    /*
+    /*<?php
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
+
+Route::get('/teste', function () {
+    return response()->json([
+        'message' => 'API is working!'
+    ]);
+});
+Route::get('/clientes', [\App\Http\Controllers\api\ClientesController::class, 'getClientes']);
+Route::get('/clientesbyid', [\App\Http\Controllers\api\ClientesController::class, 'getClientesById']);
     |--------------------------------------------------------------------------
     | User Providers
     |--------------------------------------------------------------------------
